@@ -9,12 +9,14 @@ class AppHeader extends Component{
         <Navbar.Brand href="/">S3CR3T</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Assets</Nav.Link>
-          <Nav.Link href="#pricing">Liabilities</Nav.Link>
+          <Nav.Link href="#assets">Assets</Nav.Link>
+          <Nav.Link href="#liabilities">Liabilities</Nav.Link>
+          <Nav.Link href="#tips">Tips</Nav.Link>
+          <Nav.Link href="#about">About</Nav.Link>
         </Nav>
         <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
+          <Button variant="outline-success" size="sm">Login</Button>
+          <Button variant="outline-info" size="sm">Signup</Button>
         </Form>
       </Navbar>
     );
