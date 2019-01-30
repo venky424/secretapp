@@ -5,13 +5,11 @@ import {Navbar} from 'react-bootstrap';
 class AppFooter extends Component{
   render(){
     return(
-      <Navbar inverse fixed="bottom">
-      <Navbar.Header>
+      <Navbar bg="dark" variant="dark" fixed="bottom">
         <Navbar.Brand>
-          &copy; AV Illusions
+        &copy; AV Illusions
         </Navbar.Brand>
-      </Navbar.Header>
-    </Navbar>
+      </Navbar>
     );
   }
 }
