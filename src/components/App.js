@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import AppHeader from './AppHeader.js'
 import AppFooter from './AppFooter.js'
-import AppHome from './AppHome.js';
 import AppMenuSwitch from './AppMenuSwitch';
 
 class App extends Component{
