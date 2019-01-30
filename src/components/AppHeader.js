@@ -1,14 +1,15 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Navbar, Nav, NavItem,Form,FormControl,Button} from 'react-bootstrap';
+import { NavLink,Switch,Route } from 'react-router-dom';
 
 class AppHeader extends Component{
   render(){
     return(
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">S3CR3T</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
+        <Nav className="AppNav">
+          <Nav.Link><NavLink to='/'>Home</NavLink></Nav.Link>
           <Nav.Link href="#assets">Assets</Nav.Link>
           <Nav.Link href="#liabilities">Liabilities</Nav.Link>
           <Nav.Link href="#tips">Tips</Nav.Link>
@@ -19,8 +20,11 @@ class AppHeader extends Component{
           <Button variant="outline-info" size="sm">Signup</Button>
         </Form>
       </Navbar>
+
     );
   }
 }
+
+
 
 export default AppHeader;
