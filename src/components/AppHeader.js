@@ -8,16 +8,23 @@ class AppHeader extends Component{
     return(
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand >S3CR3T</Navbar.Brand>
-        <Nav className="AppNav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav variant="pills" className="AppNav">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/assets">Assets</Nav.Link>
+          <Nav.Link href="/Assets">Assets</Nav.Link>
           <Nav.Link href="/liabilities">Liabilities</Nav.Link>
           <Nav.Link href="/tips">Tips</Nav.Link>
+          <Nav.Link href="/crypto">Crypto</Nav.Link>
+          <Nav.Link href="/converter">Converter</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
+        </Navbar.Collapse>
         <Form inline>
-          <Button variant="outline-success" size="sm">Login</Button>
-          <Button variant="outline-info" size="sm">Signup</Button>
+          <FormControl type="text" placeholder="Type Here to Search" className="mr-sm-4" />
+          <Button variant="outline-info" className="mr-sm-2">Search</Button>
+          <Button variant="success" className="mr-sm-2">Login</Button>
+          <Button variant="info" className="mr-sm-2">Signup</Button>
         </Form>
       </Navbar>
 

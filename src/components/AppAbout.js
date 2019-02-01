@@ -5,12 +5,13 @@ import {Jumbotron,Button} from 'react-bootstrap';
 class AppAbout extends Component{
   render(){
     return(
-      <Jumbotron>
+      <div className="container-fluid">
         <h1>About</h1>
         <p>
         <Button variant="primary">Learn more</Button>
         </p>
-        </Jumbotron>
+      </div>
+
 
     );
   }
