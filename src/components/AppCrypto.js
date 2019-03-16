@@ -24,12 +24,10 @@ componentDidMount() {
    .then( function(response){
      return response.json();
    })
-   .then(function(myJson){
-      return JSON.stringify(myJson);
-   })
    .then (crypto => {
-     this.setState({currencies:crypto});
      console.log(crypto);
+     this.setState({currencies:crypto});
+
   });
 
 }
@@ -46,7 +44,7 @@ componentDidMount() {
           </tr>
         </thead>
         <tbody>
-        {this.state.currencies.map(function(item, key){
+        {this.state.currencies.map((item, key) =>{
             return(
               <tr key={key}>
                  <td>{item.id}</td>
