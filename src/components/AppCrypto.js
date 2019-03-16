@@ -22,7 +22,11 @@ componentDidMount() {
      return response.json();
    })
    .then(function(myJson){
-     console.log(JSON.stringify(myJson));
+     return JSON.stringify(myJson);
+   })
+   .then (crypto => {
+     this.setState({currencies:crypto});
+     console.log(crypto);
    });
 
 }
@@ -30,8 +34,21 @@ componentDidMount() {
   render(){
     return(
       <div className="container2">
-      <div className="container1">
-       {}
+      <div className="container-fluid">
+      <Table striped bordered hover variant="dark">
+        <thead>
+          <tr>
+           <th>ID</th>
+           <th>CURRENCY_NAME</th>
+           <th>CURRENCY_TICKER</th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr>
+             <td>{this.state.currencies}</td>
+           </tr>
+        </tbody>
+      </Table>
       </div>
       </div>
 
