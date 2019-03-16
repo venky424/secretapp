@@ -6,7 +6,10 @@ class AppCrypto extends Component{
 
   constructor(props) {
   super(props);
-  this.state = {currencies: null};
+  this.state = {currencies: [
+    {id:null,currencyname:null,currencyticker:null}
+  ]
+};
 }
 
 
@@ -46,9 +49,9 @@ componentDidMount() {
         {this.state.currencies.map(function(item, key){
             return(
               <tr key={key}>
-                 <td>item.id</td>
-                 <td>item.currencyname</td>
-                 <td>item.currencyticker</td>
+                 <td>{item.id}</td>
+                 <td>{item.currencyname}</td>
+                 <td>{item.currencyticker}</td>
               </tr>
             )
         })}
