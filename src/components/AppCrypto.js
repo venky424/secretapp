@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Jumbotron,Button,Table} from 'react-bootstrap';
+import {Table} from 'react-bootstrap';
 
 class AppCrypto extends Component{
 
@@ -22,18 +22,17 @@ componentDidMount() {
      return response.json();
    })
    .then(function(myJson){
-     return JSON.stringify(myJson);
+      return JSON.stringify(myJson);
    })
    .then (crypto => {
      this.setState({currencies:crypto});
      console.log(crypto);
-   });
+  });
 
 }
 
   render(){
     return(
-      <div className="container2">
       <div className="container-fluid">
       <Table striped bordered hover variant="dark">
         <thead>
@@ -44,14 +43,18 @@ componentDidMount() {
           </tr>
         </thead>
         <tbody>
-           <tr>
-             <td>{this.state.currencies}</td>
-           </tr>
+        {this.state.currencies.map(function(item, key){
+            return(
+              <tr key={key}>
+                 <td>item.id</td>
+                 <td>item.currencyname</td>
+                 <td>item.currencyticker</td>
+              </tr>
+            )
+        })}
         </tbody>
       </Table>
       </div>
-      </div>
-
     );
   }
 }
