@@ -3,35 +3,32 @@ import ReactDOM from 'react-dom';
 import AppHeader from './AppHeader.js'
 import AppFooter from './AppFooter.js'
 import AppMenuSwitch from './AppMenuSwitch';
-import Responsive from 'react-responsive-decorator';
+import Breakpoint, { BreakpointProvider } from 'react-socks';
 
-@Responsive
+
+
 class App extends Component{
-
-state={isMobile:false}
-
-componentDidMount (){
-         this.props.media({ minWidth: 768 },() =>{
-           this.setState({
-             isMobile:false
-           });
-         });
-
-         this.props.media({ maxWidth: 768 },() =>{
-           this.setState({
-             isMobile:true
-           });
-         });
-
-}
 
   render(){
 
-     const { isMobile } = this.state;
 
     return (
       <div>
-      {isMobile ?
+      <Breakpoint small down>
+      <div className="Header">
+      <AppHeader />
+      </div>
+      <div className="Appswitch">
+      <br></br>
+      <AppMenuSwitch />
+      <br></br>
+      </div>
+      <div className="Footer">
+      <AppFooter />
+      </div>
+      </Breakpoint>
+
+      <Breakpoint medium only>
         <div>
       <div className="Header">
       <AppHeader />
@@ -45,8 +42,9 @@ componentDidMount (){
       <AppFooter />
       </div>
       </div>
-      :
-      <div>
+      </Breakpoint>
+      <Breakpoint large up>
+        <div>
       <div className="Header">
       <AppHeader />
       </div>
@@ -59,8 +57,8 @@ componentDidMount (){
       <AppFooter />
       </div>
       </div>
-      }
-      </div>
+      </Breakpoint>
+    </div>
 
     );
   }

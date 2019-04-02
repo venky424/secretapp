@@ -6,7 +6,7 @@ import { NavLink,Switch,Route } from 'react-router-dom';
 class AppHeader extends Component{
   render(){
     return(
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand >S3CR3T</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
