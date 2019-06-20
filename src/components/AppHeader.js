@@ -17,6 +17,7 @@ class AppHeader extends Component{
           <Nav.Link href="/tips">Tips</Nav.Link>
           <Nav.Link href="/crypto">Crypto</Nav.Link>
           <Nav.Link href="/converter">Converter</Nav.Link>
+          <Nav.Link href="/appslides">AppSlider</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
         </Navbar.Collapse>
