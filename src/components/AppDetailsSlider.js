@@ -2,18 +2,47 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Carousel,Jumbotron} from 'react-bootstrap';
 import '../css/AppDetailsSlider.css';
+import FirstSlide from '../images/FirstSlide.jpg';
+import SecondSlide from '../images/SecondSlide.jpg';
+import ThirdSlide from '../images/ThirdSlide.jpg';
 
 class AppDetailsSlider extends Component{
+
+  constructor(props) {
+  super(props);
+  this.state = {weatherinfo: [
+    {temp:null,maxtemp:null,mintemp:null,overcast:null}
+  ]
+};
+}
+
+componentDidMount() {
+   fetch('http://api.openweathermap.org/data/2.5/weather?q=Frankfurt am Main,de&APPID=a3319418504a936d38183ccbc6d1fddb',{
+     method:'GET',
+     headers:{
+       'Content-Type':'application/json'
+     }
+   })
+   .then( function(response){
+     return response.json();
+   })
+   .then (weatherinfo => {
+     console.log(weatherinfo);
+     this.setState({weatherinfo:weatherinfo});
+
+  });
+
+}
 
   render(){
 
     return(
-<Jumbotron className="container bg-dark text-white" >
-     <Carousel className="container " align="center">
+
+     <Carousel className="container" align="center" color="black">
  <Carousel.Item align="center">
  <img
-   className="d-block w-100"
-   src="../images/FirstSlide.jpg"
+   className="d-block w-100 h-50"
+   src={FirstSlide} alt="FirsSlide"
  />
    <Carousel.Caption className="d-none d-md-block">
      <h3>First slide label</h3>
@@ -22,8 +51,8 @@ class AppDetailsSlider extends Component{
  </Carousel.Item>
  <Carousel.Item align="center">
  <img
-   className="d-block w-100"
-   src="../images/SecondSlide.jpg"
+   className="d-block w-100 h-80"
+   src={SecondSlide} alt="SecondSlide"
  />
    <Carousel.Caption  className="d-none d-md-block">
      <h3>Second slide label</h3>
@@ -32,8 +61,8 @@ class AppDetailsSlider extends Component{
  </Carousel.Item >
  <Carousel.Item align="center">
  <img
-   className="d-block w-100"
-   src="../images/ThirdSlide.jpg"
+   className="d-block w-100 h-80"
+   src={ThirdSlide} alt="ThirdSlide"
  />
    <Carousel.Caption className="d-none d-md-block">
      <h3>Third slide label</h3>
@@ -41,7 +70,6 @@ class AppDetailsSlider extends Component{
    </Carousel.Caption>
  </Carousel.Item>
 </Carousel>
-</Jumbotron>
 
 
     );

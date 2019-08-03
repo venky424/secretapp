@@ -12,12 +12,8 @@ class AppHeader extends Component{
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav variant="pills" className="AppNav">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/Assets">Assets</Nav.Link>
-          <Nav.Link href="/liabilities">Liabilities</Nav.Link>
-          <Nav.Link href="/tips">Tips</Nav.Link>
-          <Nav.Link href="/crypto">Crypto</Nav.Link>
-          <Nav.Link href="/converter">Converter</Nav.Link>
-          <Nav.Link href="/appslides">AppSlider</Nav.Link>
+          <Nav.Link href="/expenses">Expenses</Nav.Link>
+          <Nav.Link href="/exphistory">ExpHistory</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
         </Navbar.Collapse>
